@@ -1,3 +1,10 @@
+/**
+1) Module Name: a5_endecutils.cpp
+2) Author: Raj Panchal (rjp659@uregina.ca)
+3) Date of creation: 2023-11-16
+4) Purpose: This is the file which consists of implementation of the various functions declared in the header file.
+*/
+
 #include "a5_header.h" 
 
 //! Function to build the Morse code binary tree
@@ -34,6 +41,7 @@ Node* buildMorseCodeTree(const map<char, string>& morseCodeMap)
     return root; //! Return the root of the built Morse code binary tree
 }
 
+
 //! Function to encode a message using Morse code
 string encodeMessage(const string& message, const map<char, string>& morseCodeMap) 
 {
@@ -53,6 +61,7 @@ string encodeMessage(const string& message, const map<char, string>& morseCodeMa
 
     return encodedMessage; //! Return the encoded message
 }
+
 
 //! Function to decode a message using Morse code tree
 string decodeMessage(Node* root, const string& encodedMessage) 
@@ -88,6 +97,6 @@ string decodeMessage(Node* root, const string& encodedMessage)
     {
         decodedMessage +=  cnode->data; //! Append the last decoded letter if not at the root
     }
-    
+
     return decodedMessage; //! Return the decoded message
 }
