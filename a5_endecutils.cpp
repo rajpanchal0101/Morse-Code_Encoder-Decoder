@@ -22,23 +22,23 @@ Node* buildMorseCodeTree(const map<char, string>& morseCodeMap)
             {
                 if (! cnode->left) 
                 {
-                     cnode->left = new Node('*'); //! Create a new node if left child is nullptr
+                     cnode->left = new Node('*'); //! Creates a new node if left child is nullptr
                 }
-                 cnode =  cnode->left;  //! Move to the left child
+                 cnode =  cnode->left;  //! Moves to the left child
             } 
             else if (c == '-') 
             {
                 if (! cnode->right) 
                 {
-                     cnode->right = new Node('*'); //! Create a new node if right child is nullptr
+                     cnode->right = new Node('*'); //! Creates a new node if right child is nullptr
                 }
-                 cnode =  cnode->right; //! Move to the right child
+                 cnode =  cnode->right; //! Moves to the right child
             }
         }
-         cnode->data = pair.first; //! Assign the corresponding letter to the current node
+         cnode->data = pair.first; //! Assigns the corresponding letter to the current node
     }
 
-    return root; //! Return the root of the built Morse code binary tree
+    return root; //! Returns the root of the built Morse code binary tree
 }
 
 
@@ -51,15 +51,15 @@ string encodeMessage(const string& message, const map<char, string>& morseCodeMa
     {
         if (c == ' ')
         {
-            encodedMessage += " "; //! Use space as delimiter between words
+            encodedMessage += " "; //! Uses space as delimiter between words
         } 
         else 
         {
-            encodedMessage += morseCodeMap.at(tolower(c)) + " "; //! Append Morse code for each character
+            encodedMessage += morseCodeMap.at(tolower(c)) + " "; //! Appends Morse code for each character
         }
     }
 
-    return encodedMessage; //! Return the encoded message
+    return encodedMessage; //! Returns the encoded message
 }
 
 
@@ -73,30 +73,30 @@ string decodeMessage(Node* root, const string& encodedMessage)
     {
         if (c == '.') 
         {
-             cnode =  cnode->left; //! Traverse left child for dot
+             cnode =  cnode->left; //! Traverses left child for dot
         } 
         else if (c == '-') 
         {
-             cnode =  cnode->right; //! Traverse right child for dash
+             cnode =  cnode->right; //! Traverses right child for dash
         } 
         else if (c == ' ') 
         {
             if ( cnode->data != '*')
             {
-                decodedMessage +=  cnode->data; //! Append the decoded letter if not at the root
+                decodedMessage +=  cnode->data; //! Appends the decoded letter if not at the root
             } 
             else 
             {
-                decodedMessage += ' '; //! Append space if '*' is encountered
+                decodedMessage += ' '; //! Appends space if '*' is encountered
             }
-             cnode = root; //! Reset to the root for the next letter
+             cnode = root; //! Resets to the root for the next letter
         }
     }
 
     if ( cnode->data != '*')
     {
-        decodedMessage +=  cnode->data; //! Append the last decoded letter if not at the root
+        decodedMessage +=  cnode->data; //! Appends the last decoded letter if not at the root
     }
 
-    return decodedMessage; //! Return the decoded message
+    return decodedMessage; //! Returns the decoded message
 }
