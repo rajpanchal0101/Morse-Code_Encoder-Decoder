@@ -26,7 +26,7 @@ Files:
       - Description: Screenshot of IDE integrated version control simulation for the assignment.
 
 7. **a5_screenshot_terminal_git_commands.JPG** : 
-       - Description: Screenshot of terminal with Git commands for adding, commiting and pushing various files of  assignment 5 to github.
+      - Description: Screenshot of terminal with Git commands for adding, commiting and pushing various files of  assignment 5 to github.
 
 8. **morse_code.txt** : 
       - Description: Text file with morse code for various letters in a particular order which is inputted in the "a5_main.cpp".
