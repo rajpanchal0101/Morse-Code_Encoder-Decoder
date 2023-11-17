@@ -4,7 +4,7 @@
 3) Date of creation: 2023-11-16
 4) Purpose: This is the file which consists of implementation of the various functions declared in the header file.
 */
-
+ 
 #include "a5_header.h" 
 
 //! Function to build the Morse code binary tree
