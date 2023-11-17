@@ -20,13 +20,29 @@ struct Node
     Node(char val) : data(val), left(nullptr), right(nullptr) {}
 };
 
-//! Function to build the Morse code binary tree
+
+/**
+1) Purpose: builds the Morse code binary tree.
+2) Parameters: morseCodeMap(map<char, string>)
+3) Return type: Node
+4) Side Effect: None
+*/
 Node* buildMorseCodeTree(const map<char, string>& morseCodeMap);
 
 
-//! Function to encode a message using Morse code
+/**
+1) Purpose: encodes a message using Morse code.
+2) Parameters: message(string), morseCodeMap(map<char, string>)
+3) Return type: string
+4) Side Effect: None
+*/
 string encodeMessage(const string& message, const map<char, string>& morseCodeMap);
 
 
-//! Function to decode a message using Morse code tree
+/**
+1) Purpose: decodes a message using Morse code tree.
+2) Parameters: root(Node), encodedMessage(string)
+3) Return type: string
+4) Side Effect: None
+*/
 string decodeMessage(Node* root, const string& encodedMessage);
